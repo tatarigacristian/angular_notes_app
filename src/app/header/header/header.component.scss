@@ -1,0 +1,15 @@
+.wrapper{
+    display: flex;
+    justify-content: space-between;
+    h1{
+        font-family: 'Nunito';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 43px;
+        line-height: 59px;
+    }
+    .options{
+        display: flex;
+        gap: 2.1rem;
+    }
+}
