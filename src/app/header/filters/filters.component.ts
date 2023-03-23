@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./filters.component.scss']
 })
 export class FiltersComponent {
+  iconPath = 'assets/icons/info.svg'
 
 }

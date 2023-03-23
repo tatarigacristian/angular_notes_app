@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent {
-
+  iconPath = 'assets/icons/search.svg'
 }
