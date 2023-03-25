@@ -6,6 +6,7 @@ import { HeaderModule } from './header/header.module';
 import { NotesModule } from './notes/notes.module';
 import { NotesComponent } from './notes/notes/notes.component';
 import {CommonModule} from "./common/common.module";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import {CommonModule} from "./common/common.module";
         BrowserModule,
         HeaderModule,
         NotesModule,
-        CommonModule
+        CommonModule,
+        BrowserAnimationsModule
     ],
   providers: [],
   bootstrap: [AppComponent]
