@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import {notes} from "./notes.map";
+import {availableColors, notes} from "./notes.map";
+import {selectColors} from "../../utils/app";
+import {KeyValue} from "@angular/common";
+import {Note} from "./notes.model";
 
 @Component({
   selector: 'app-notes',
@@ -7,5 +10,9 @@ import {notes} from "./notes.map";
   styleUrls: ['./notes.component.scss']
 })
 export class NotesComponent {
-  notes = notes;
+  notes: Note[] = notes;
+  colors: string[] = selectColors(notes.length, availableColors)
+  getNoteColor(index: number){
+    return this.colors[index];
+  }
 }

@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import {ButtonType} from "./button.model";
 
 @Component({
   selector: 'app-button',
@@ -7,4 +8,5 @@ import { Component, Input } from '@angular/core';
 })
 export class ButtonComponent {
   @Input() iconPath!: string;
+  @Input() type: string = ButtonType.square;
 }

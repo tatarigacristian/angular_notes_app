@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import {ButtonType} from "./common/button/button.model";
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'notes_app';
+  plusPath = 'assets/icons/plus.svg';
+  buttonType = ButtonType.circle;
 }

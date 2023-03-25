@@ -2,5 +2,7 @@
     padding:2.1rem;
 }
 app-notes{
-    padding-top: 1.5rem;
+    display: flex;
+    gap: 2.25rem;
+    flex-direction: column;
 }

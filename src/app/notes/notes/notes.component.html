@@ -1,4 +1,6 @@
-<div class="notes" *ngFor="let note of notes">
-    <app-note [note]="note"></app-note>
-</div>
+<app-note
+        *ngFor="let note of notes; let i= index"
+        [note]="note"
+        [color]="getNoteColor(i)">
+</app-note>
 
