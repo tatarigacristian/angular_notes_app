@@ -1,4 +1,8 @@
 import {Component, Input} from '@angular/core';
+import {MatDialog} from "@angular/material/dialog";
+import {Note, NoteClass} from "../../notes/notes/notes.model";
+import {DialogOverviewComponent} from "../dialog-overview/dialog-overview.component";
+import {DialogNoteComponent} from "../../dialog/dialog-note/dialog-note.component";
 
 @Component({
   selector: 'app-fixed-button',
@@ -7,4 +11,20 @@ import {Component, Input} from '@angular/core';
 })
 export class FixedButtonComponent {
   @Input() iconPath!: string;
+
+  note: Note|null = new NoteClass(1, 'test', 'test');
+
+  constructor(public dialog: MatDialog) {}
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(DialogNoteComponent, {
+      data: this.note
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(result);
+      console.log('The dialog was closed');
+    });
+  }
+
 }

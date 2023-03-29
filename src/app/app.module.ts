@@ -8,10 +8,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatInputModule} from "@angular/material/input";
 import {FormsModule} from "@angular/forms";
 import {MatButtonModule} from "@angular/material/button";
+import { DialogNoteComponent } from './dialog/dialog-note/dialog-note.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    DialogNoteComponent,
   ],
     imports: [
         BrowserModule,

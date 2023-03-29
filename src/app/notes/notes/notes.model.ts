@@ -4,3 +4,10 @@ export type Note = {
     description: string,
 }
 
+export class NoteClass {
+    constructor(
+        public id: number,
+        public title: string,
+        public description: string,
+    ) {}
+}
