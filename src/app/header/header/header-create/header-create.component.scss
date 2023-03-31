@@ -1,7 +1,12 @@
+.searching{
+  display: block;
+  width: 100%;
+}
 .wrapper{
   display: flex;
   justify-content: space-between;
   padding-bottom: 3.7rem;
+
   h1{
     font-family: 'Nunito', sans-serif;
     font-style: normal;

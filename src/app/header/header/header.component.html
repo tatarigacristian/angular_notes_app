@@ -1,7 +1,7 @@
-<div class="wrapper">
-    <h1>Notes</h1>
+<div [class.wrapper]="!isSearching" [class.searching]="isSearching">
+    <h1 *ngIf="!isSearching">Notes</h1>
     <div class="options">
-        <app-search></app-search>
-        <app-filters></app-filters>
+        <app-search (valueEmitter)="setSearchValue($event)" (isSearchingEmitter)="setIsSearching($event)"></app-search>
+        <app-filters *ngIf="!isSearching"></app-filters>
     </div>
 </div>

@@ -1,1 +1,6 @@
-<app-button [iconPath]="iconPath"></app-button>
+<app-button *ngIf="!isOpen" (click)="open()" [iconPath]="iconPath"></app-button>
+
+<form *ngIf="isOpen" #notesForm="ngForm" (ngSubmit)="onSubmit()">
+    <input id="search" required minlength="3" type='text' placeholder="Search by the keyboard" (change)="onChange($event)" [(ngModel)]="searchValue" name="title" #title="ngModel">
+        <img src="assets/icons/x.svg" alt="search" (click)="close()">
+</form>

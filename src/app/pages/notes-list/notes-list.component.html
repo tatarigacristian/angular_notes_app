@@ -1,5 +1,5 @@
 <div class="container">
-    <app-header></app-header>
+    <app-header (searchValueEmitter)="setSearchValue($event)"></app-header>
 </div>
-<app-notes></app-notes>
+<app-notes [searchValue]="searchValue"></app-notes>
 <app-fixed-button [iconPath]="plusPath"></app-fixed-button>

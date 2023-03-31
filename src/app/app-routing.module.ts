@@ -9,9 +9,31 @@ const routes: Routes = [
     {path: '', redirectTo: '/notes', pathMatch: 'full'},
     {path: 'notes', component: NotesListComponent},
     {path: 'notes/create', component: NotesCreateComponent},
-    {path: 'notes/:id', component: NotesEditComponent},
+    {path: 'notes/:id/view', component: NotesEditComponent},
+    {path: 'notes/:id/edit', component: NotesEditComponent},
 ];
 
+// const routes: Routes = [
+//     {
+//         path: '',
+//         redirectTo: '/notes',
+//         pathMatch: 'full'
+//     },
+//     {
+//         path: 'notes',
+//         component: NotesListComponent,
+//         children: [
+//             {
+//                 path: 'create',
+//                 component: NotesCreateComponent
+//             },
+//             {
+//                 path: ':id',
+//                 component: NotesEditComponent
+//             }
+//         ]
+//     }
+// ];
 
 @NgModule({
     imports: [RouterModule.forRoot(routes)],

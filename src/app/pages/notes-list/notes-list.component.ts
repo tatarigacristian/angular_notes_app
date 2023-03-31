@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {filterNotesByTitleOrDescription, getNotesFromLocalStorage} from "../../utils/app";
 
 @Component({
   selector: 'app-notes-list',
@@ -7,5 +8,11 @@ import { Component } from '@angular/core';
 })
 export class NotesListComponent {
   plusPath = 'assets/icons/plus.svg';
+
+  searchValue: string|null = null;
+
+  setSearchValue(value: string){
+    this.searchValue = value;
+  }
 
 }

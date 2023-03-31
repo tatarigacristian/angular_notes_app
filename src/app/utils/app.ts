@@ -61,3 +61,24 @@ export function deleteNoteFromLocalStorage(note: Note): void {
     const filteredNotes = notes.filter(noteFromLocalStorage => noteFromLocalStorage.id !== note.id);
     localStorage.setItem('notes', JSON.stringify(filteredNotes));
 }
+
+export function updateNoteInLocalStorage(note: Note): void {
+    const notes: Note[] = JSON.parse(localStorage.getItem('notes') || '[]');
+    const noteIndex = notes.findIndex(noteFromLocalStorage => noteFromLocalStorage.id === note.id);
+    notes[noteIndex] = note;
+    localStorage.setItem('notes', JSON.stringify(notes));
+}
+
+export function filterNotesByTitleOrDescription(notes: Note[], search: string): Note[] {
+    console.log(search);
+    if(!search){
+        return getNotesFromLocalStorage();
+    }
+    return notes.filter(note => {
+
+        if(!note.title || !note.description){
+            return false;
+        }
+        return note.title.toLowerCase().includes(search.toLowerCase()) || note.description.toLowerCase().includes(search.toLowerCase());
+    });
+}

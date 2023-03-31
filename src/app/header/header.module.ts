@@ -7,6 +7,8 @@ import {DialogExampleComponent} from "../common/dialog-example/dialog-example.co
 import {DialogOverviewComponent} from "../common/dialog-overview/dialog-overview.component";
 import { HeaderCreateComponent } from './header/header-create/header-create.component';
 import {RouterLink} from "@angular/router";
+import {FormsModule} from "@angular/forms";
+import {NgIf} from "@angular/common";
 
 @NgModule({
     declarations: [
@@ -17,7 +19,9 @@ import {RouterLink} from "@angular/router";
     ],
     imports: [
         CommonModule,
-        RouterLink
+        RouterLink,
+        FormsModule,
+        NgIf
     ],
     exports: [
         HeaderComponent,
