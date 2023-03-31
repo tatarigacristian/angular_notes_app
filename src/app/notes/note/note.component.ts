@@ -1,5 +1,8 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Note} from "../notes/notes.model";
+import {deleteNoteFromLocalStorage, findNoteById} from "../../utils/app";
+import {FormBuilder} from "@angular/forms";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-note',
@@ -7,8 +10,27 @@ import {Note} from "../notes/notes.model";
   styleUrls: ['./note.component.scss']
 })
 export class NoteComponent {
-  // color: string = '#'+Math.floor(Math.random()*16777215).toString(16);
-  // color: string = 'hsl(55, 87%, 53%)';
+  constructor(private router: Router) {}
+
+  isDeleteMode = false;
+  deletePath = 'assets/icons/remove.svg';
+
+  onDelete(){
+    const noteFromLocalStorage = findNoteById(this.note.id);
+    if(noteFromLocalStorage){
+      deleteNoteFromLocalStorage(noteFromLocalStorage)
+      this.noteDeleted.emit();
+    }
+  }
+
+  redirectToNotes(){
+    this.router.navigate(['notes']).then(r => console.log(r));
+  }
+
+  onHover(status: boolean){
+    this.isDeleteMode = status;
+  }
   @Input() note!: Note;
   @Input() color!: string;
+  @Output() noteDeleted = new EventEmitter();
 }

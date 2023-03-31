@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { NoteComponent } from './note/note.component';
 import { NotesComponent } from './notes/notes.component';
+import {CommonModule} from "../common/common.module";
+import {NgForOf, NgIf} from "@angular/common";
 
 
 
@@ -11,7 +12,9 @@ import { NotesComponent } from './notes/notes.component';
     NotesComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    NgForOf,
+    NgIf,
   ],
   exports:[
     NotesComponent

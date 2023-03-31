@@ -1,6 +1,7 @@
 <app-note
         *ngFor="let note of notes; let i= index"
         [note]="note"
+        (noteDeleted)="onNoteDeleted()"
         [color]="getNoteColor(i)">
 </app-note>
 

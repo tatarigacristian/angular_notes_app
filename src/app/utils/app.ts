@@ -50,3 +50,14 @@ export function getNotesFromLocalStorage(): Note[] {
     const notes = JSON.parse(localStorage.getItem('notes') || '[]');
     return notes.reverse();
 }
+
+export function findNoteById(id: string): Note | undefined {
+    const notes: Note[] = JSON.parse(localStorage.getItem('notes') || '[]');
+    return notes.find(note => note.id === id);
+}
+
+export function deleteNoteFromLocalStorage(note: Note): void {
+    const notes: Note[] = JSON.parse(localStorage.getItem('notes') || '[]');
+    const filteredNotes = notes.filter(noteFromLocalStorage => noteFromLocalStorage.id !== note.id);
+    localStorage.setItem('notes', JSON.stringify(filteredNotes));
+}

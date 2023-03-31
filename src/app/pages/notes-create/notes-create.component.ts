@@ -23,15 +23,13 @@ export class NotesCreateComponent implements OnInit {
 
   onSubmit(): void {
 
-    if(this.isSubmitted) {
-        return;
-    }
     this.isSubmitted = true;
 
-    // if(!this.registerForm.value.title || !this.registerForm.value.description) {
-    //     return;
-    // }
     this.createNote();
+
+    if(this.registerForm.invalid) {
+        return;
+    }
     this.redirectToNotes();
   }
 
@@ -40,12 +38,14 @@ export class NotesCreateComponent implements OnInit {
   }
 
   createNote(): void {
+    if(!this.registerForm.value.title || !this.registerForm.value.description) {
+        return;
+    }
     const note: NoteClass = {
       id: generateUniqueId(),
-      title: this.registerForm.value.title || 'No title',
-      description: this.registerForm.value.description || 'No description',
+      title: this.registerForm.value.title ,
+      description: this.registerForm.value.description,
     }
     saveNoteToLocalStorage(note);
-    this.redirectToNotes();
   }
 }

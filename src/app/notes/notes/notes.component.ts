@@ -15,4 +15,7 @@ export class NotesComponent {
   getNoteColor(index: number){
     return this.colors[index];
   }
+  onNoteDeleted(){
+    this.notes = getNotesFromLocalStorage();
+  }
 }

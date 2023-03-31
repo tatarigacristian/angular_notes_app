@@ -1,3 +1,10 @@
-<div class="note" [style.background-color]="color">
+<div class="note"
+     [style.background-color]="color"
+     [class.remove]="isDeleteMode"
+     (mouseleave)="onHover(false)"
+    (mouseenter)="onHover(true)"
+>
     <p>{{note.title}}</p>
+    <app-button *ngIf="isDeleteMode" (click)="onDelete()" [iconPath]="deletePath"></app-button>
+
 </div>
