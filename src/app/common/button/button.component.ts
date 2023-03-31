@@ -8,4 +8,5 @@ import {ButtonType} from "./button.model";
 })
 export class ButtonComponent {
   @Input() iconPath!: string;
+  @Input() type: string = 'button';
 }

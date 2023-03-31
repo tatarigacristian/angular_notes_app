@@ -6,14 +6,21 @@ import { NotesModule } from './notes/notes.module';
 import {CommonModule} from "./common/common.module";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatInputModule} from "@angular/material/input";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatButtonModule} from "@angular/material/button";
 import { DialogNoteComponent } from './dialog/dialog-note/dialog-note.component';
+import {AppRoutingModule} from "./app-routing.module";
+import {NotesListComponent} from "./pages/notes-list/notes-list.component";
+import {NotesCreateComponent} from "./pages/notes-create/notes-create.component";
+import {NotesEditComponent} from "./pages/notes-edit/notes-edit.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     DialogNoteComponent,
+      NotesListComponent,
+      NotesEditComponent,
+      NotesCreateComponent,
   ],
     imports: [
         BrowserModule,
@@ -24,6 +31,8 @@ import { DialogNoteComponent } from './dialog/dialog-note/dialog-note.component'
         MatInputModule,
         FormsModule,
         MatButtonModule,
+        AppRoutingModule,
+        ReactiveFormsModule
     ],
   providers: [],
   bootstrap: [AppComponent]

@@ -7,5 +7,4 @@ import {ButtonType} from "./common/button/button.model";
 })
 export class AppComponent {
   title = 'notes_app';
-  plusPath = 'assets/icons/plus.svg';
 }

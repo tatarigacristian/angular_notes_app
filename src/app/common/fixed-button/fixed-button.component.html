@@ -1,9 +1,9 @@
 <div class="circle">
-<!--    <button type="button">-->
-<!--        <img alt="image" [src]="iconPath">-->
-<!--    </button>-->
-
-    <button (click)="openDialog()" mat-icon-button color="primary">
-        <mat-icon>add</mat-icon>
+    <button type="button" [routerLink]="['/notes/create']" >
+        <img alt="image" [src]="iconPath">
     </button>
+
+<!--    <button (click)="openDialog()" mat-icon-button color="primary">-->
+<!--        <mat-icon>add</mat-icon>-->
+<!--    </button>-->
 </div>

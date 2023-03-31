@@ -1,0 +1,43 @@
+
+<form class="form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <app-header-create></app-header-create>
+
+    <div class="field">
+        <input
+                type="text"
+                id="title"
+                placeholder="Title"
+                formControlName="title"
+                [class.invalid]="
+        registerForm.get('title')?.invalid &&
+        (registerForm.get('title')?.dirty ||
+          registerForm.get('title')?.touched ||
+          isSubmitted)
+      "
+        />
+        <span
+                *ngIf="
+        registerForm.get('title')?.hasError('required') &&
+        (registerForm.get('title')?.dirty ||
+          registerForm.get('title')?.touched ||
+          isSubmitted)
+      "
+                class="error"
+        >This field is required.</span
+        >
+    </div>
+    <div class="field">
+        <textarea
+                placeholder="Type something..."
+                type="text"
+                id="description"
+                formControlName="description"
+                [class.invalid]="
+        registerForm.get('description')?.invalid &&
+        (registerForm.get('description')?.dirty ||
+          registerForm.get('description')?.touched ||
+          isSubmitted)
+      "></textarea>
+    </div>
+
+</form>

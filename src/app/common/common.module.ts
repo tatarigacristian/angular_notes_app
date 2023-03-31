@@ -9,6 +9,7 @@ import { DialogOverviewComponent } from './dialog-overview/dialog-overview.compo
 import {MAT_DIALOG_DATA, MatDialogModule, MatDialogRef} from "@angular/material/dialog";
 import {MatInputModule} from "@angular/material/input";
 import {FormsModule} from "@angular/forms";
+import {RouterLink} from "@angular/router";
 
 
 @NgModule({
@@ -18,15 +19,16 @@ import {FormsModule} from "@angular/forms";
     DialogExampleComponent,
     DialogOverviewComponent,
   ],
-  imports: [
-    NgClass,
-    MatIconModule,
-    MatButtonModule,
-    MatDialogModule,
-    MatInputModule,
-    FormsModule,
-    NgIf
-  ],
+    imports: [
+        NgClass,
+        MatIconModule,
+        MatButtonModule,
+        MatDialogModule,
+        MatInputModule,
+        FormsModule,
+        NgIf,
+        RouterLink
+    ],
   providers: [
     { provide: MAT_DIALOG_DATA, useValue: {} },
     { provide: MatDialogRef, useValue: {} }
