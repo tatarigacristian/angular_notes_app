@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {availableColors, notes} from "./notes.map";
-import {selectColors} from "../../utils/app";
+import {getNotesFromLocalStorage, selectColors} from "../../utils/app";
 import {KeyValue} from "@angular/common";
 import {Note} from "./notes.model";
 
@@ -10,7 +10,7 @@ import {Note} from "./notes.model";
   styleUrls: ['./notes.component.scss']
 })
 export class NotesComponent {
-  notes: Note[] = notes;
+  notes: Note[] = getNotesFromLocalStorage();
   colors: string[] = selectColors(notes.length, availableColors)
   getNoteColor(index: number){
     return this.colors[index];

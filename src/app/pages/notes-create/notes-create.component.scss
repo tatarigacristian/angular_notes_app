@@ -9,6 +9,12 @@ form {
     font-family: 'Nunito', serif;
     margin: 0;
     padding: 0;
+    &.invalid{
+      // make placeholder color red
+        &::-webkit-input-placeholder {
+            color: red;
+        }
+    }
   }
 
   #title {
@@ -21,6 +27,7 @@ form {
     &:focus {
       outline: none;
     }
+
   }
 
   #description {

@@ -1,4 +1,5 @@
-import {Note} from "../note/note";
+import {generateUniqueId} from "../../utils/app";
+import {Note, NoteClass} from "./notes.model";
 
 export const availableColors = [
     '#FFD99E', '#9EEE21', '#3399FF', '#B69CFF', '#91F48F',
@@ -9,17 +10,17 @@ export const availableColors = [
 
 export const notes: Note[] = [
     {
-        id: 1,
+        id: generateUniqueId(),
         title: 'Note 1',
         description: 'Description 1'
     },
     {
-        id: 2,
+        id: generateUniqueId(),
         title: 'Note 2 (with extra text)',
         description: 'Description 2'
     },
     {
-        id: 3,
+        id: generateUniqueId(),
         title: 'Note 3',
         description: 'Description 3'
     },

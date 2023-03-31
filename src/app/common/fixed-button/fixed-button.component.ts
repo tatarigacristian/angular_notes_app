@@ -3,6 +3,7 @@ import {MatDialog} from "@angular/material/dialog";
 import {Note, NoteClass} from "../../notes/notes/notes.model";
 import {DialogOverviewComponent} from "../dialog-overview/dialog-overview.component";
 import {DialogNoteComponent} from "../../dialog/dialog-note/dialog-note.component";
+import {generateUniqueId} from "../../utils/app";
 
 @Component({
   selector: 'app-fixed-button',
@@ -12,7 +13,7 @@ import {DialogNoteComponent} from "../../dialog/dialog-note/dialog-note.componen
 export class FixedButtonComponent {
   @Input() iconPath!: string;
 
-  note: Note|null = new NoteClass(1, 'test', 'test');
+  note: Note = new NoteClass(generateUniqueId(), 'test', 'test');
 
   constructor(public dialog: MatDialog) {}
 

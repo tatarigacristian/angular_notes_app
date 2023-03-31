@@ -1,4 +1,3 @@
-
 <form class="form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
     <app-header-create></app-header-create>
 
@@ -6,38 +5,19 @@
         <input
                 type="text"
                 id="title"
-                placeholder="Title"
+                [placeholder]="isInputError(registerForm.get('title'), 'required', isSubmitted) ? 'Title is required.' : 'Title'"
                 formControlName="title"
-                [class.invalid]="
-        registerForm.get('title')?.invalid &&
-        (registerForm.get('title')?.dirty ||
-          registerForm.get('title')?.touched ||
-          isSubmitted)
-      "
+                [class.invalid]="isInputInvalid(registerForm.get('title'), isSubmitted)"
         />
-        <span
-                *ngIf="
-        registerForm.get('title')?.hasError('required') &&
-        (registerForm.get('title')?.dirty ||
-          registerForm.get('title')?.touched ||
-          isSubmitted)
-      "
-                class="error"
-        >This field is required.</span
-        >
     </div>
     <div class="field">
         <textarea
-                placeholder="Type something..."
+                [placeholder]="isInputError(registerForm.get('description'), 'required', isSubmitted) ? 'Description is required.' : 'Type something...'"
                 type="text"
                 id="description"
                 formControlName="description"
-                [class.invalid]="
-        registerForm.get('description')?.invalid &&
-        (registerForm.get('description')?.dirty ||
-          registerForm.get('description')?.touched ||
-          isSubmitted)
-      "></textarea>
+                [class.invalid]="isInputInvalid(registerForm.get('title'), isSubmitted)"
+      ></textarea>
     </div>
 
 </form>

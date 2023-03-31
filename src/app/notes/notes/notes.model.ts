@@ -1,13 +1,13 @@
 export type Note = {
-    id: number,
-    title: string,
-    description: string,
+    id: string,
+    title: string | undefined,
+    description: string | undefined,
 }
 
 export class NoteClass {
     constructor(
-        public id: number,
-        public title: string,
-        public description: string,
+        public id: string,
+        public title: string | undefined,
+        public description: string | undefined,
     ) {}
 }

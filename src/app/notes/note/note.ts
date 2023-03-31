@@ -1,7 +1,7 @@
-export class Note {
-    constructor(
-        public id: number,
-        public title: string,
-        public description: string,
-    ) {}
-}
+// export class Note {
+//     constructor(
+//         public id: string,
+//         public title: string | undefined,
+//         public description: string | undefined
+//     ) {}
+// }
