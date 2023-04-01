@@ -9,6 +9,7 @@ import {SecurityService} from "../../services/security.service";
 })
 export class NotesListComponent implements OnInit, OnChanges {
 
+    public observable$: any;
     constructor(private securityService: SecurityService) {
     }
 
@@ -29,12 +30,16 @@ export class NotesListComponent implements OnInit, OnChanges {
     ngOnInit() {
         // console.log('init');
 
+        this.observable$ = this.securityService.getPokemon('ditto')
+
         // this.securityService.getPokemon("ditto")
         //     .subscribe((res) => {
         //         console.log(res);
         // });
 
-        this.securityService.customExample();
+        // this.securityService.customExample();
+        // this.securityService.customExampleObjects();
+        this.securityService.customExampleInterval();
     }
 
     change() {
