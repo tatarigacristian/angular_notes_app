@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {Note} from "../../notes/notes/notes.model";
 import {ActivatedRoute, Router} from "@angular/router";
 import {findNoteById} from "../../utils/app";
@@ -17,9 +17,15 @@ export class NotesViewComponent {
   }
 
   ngOnInit() {
+    if(this.previewNote) {
+      this.note = this.previewNote;
+      return;
+    }
     this.route.params.subscribe(params => {
       const id = params['id'];
       this.note = findNoteById(id);
     });
   }
+
+  @Input() previewNote: Note|null = null;
 }

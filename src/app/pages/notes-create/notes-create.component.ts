@@ -9,6 +9,14 @@ import {Router} from "@angular/router";
   styleUrls: ['./notes-create.component.scss']
 })
 export class NotesCreateComponent implements OnInit {
+
+  // previewNote: Note|null = null;
+  previewNote: Note|null = {
+    id: generateUniqueId(),
+    title: 'Not working',
+    description: 'Not working',
+  };
+
   registerForm = this.fb.group({
     title: ['', Validators.required],
     description: ['', Validators.required],
@@ -19,6 +27,7 @@ export class NotesCreateComponent implements OnInit {
   constructor(private fb: FormBuilder, private router: Router) {}
 
   ngOnInit(): void {
+    console.log(this.previewNote);
   }
 
   onSubmit(): void {
@@ -31,6 +40,22 @@ export class NotesCreateComponent implements OnInit {
         return;
     }
     this.redirectToNotes();
+  }
+
+  onPreview():void {
+
+    // if(!this.registerForm.value.title || !this.registerForm.value.description) {
+    //   console.log('here1');
+    //   return;
+    // }
+    this.previewNote = {
+      id: generateUniqueId(),
+      title: this.registerForm?.value.title ?? 'Not working',
+      description: this.registerForm?.value.description ?? 'Not working',
+    }
+
+    console.log(this.previewNote);
+
   }
 
   redirectToNotes(): void {

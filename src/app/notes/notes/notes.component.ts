@@ -10,7 +10,8 @@ import {Note} from "./notes.model";
 })
 export class NotesComponent {
   notes: Note[] = getNotesFromLocalStorage();
-  colors: string[] = selectColors(notes.length, availableColors)
+  colors: string[] = selectColors(this.notes.length, availableColors)
+
   getNoteColor(index: number){
     return this.colors[index];
   }

@@ -2,7 +2,7 @@
     <app-button routerLink="/notes" [iconPath]="backPath"></app-button>
 
     <div class="options">
-        <app-button [iconPath]="viewPath"></app-button>
+        <app-button [onClickInput]="onPreview" [iconPath]="viewPath"></app-button>
         <app-button type="submit" [iconPath]="savePath"></app-button>
     </div>
 </div>

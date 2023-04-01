@@ -1,0 +1,49 @@
+@import "variables";
+
+form {
+  #title, #description {
+    width: 100%;
+    background-color: $background;
+    color: #FFFFFF;
+    border: none;
+    font-family: 'Nunito', serif;
+    margin: 0;
+    padding: 0;
+    &.invalid{
+      // make placeholder color red
+      &::-webkit-input-placeholder {
+        color: red;
+      }
+    }
+  }
+
+  #title {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 65px;
+    max-height: 360px;
+    height: 48px;
+    &:focus {
+      outline: none;
+    }
+
+  }
+
+  #description {
+    padding-top: 30px;
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 31px;
+    resize: none;
+    height: calc(100vh - 250px);
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .error {
+    color: red;
+  }
+}

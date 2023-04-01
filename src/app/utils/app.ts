@@ -2,6 +2,7 @@ import {AbstractControl} from "@angular/forms";
 import {Note} from "../notes/notes/notes.model";
 
 export function selectColors(n: number, colors: string[]): string[] {
+    console.log(n);
     const colorsCopy = shuffle(colors);
     const selectedColors: string[] = [];
     const numColors = colorsCopy.length;

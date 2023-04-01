@@ -1,5 +1,6 @@
-<form class="form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-    <app-header-create></app-header-create>
+{{previewNote|json}}
+<form *ngIf="!previewNote" class="form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <app-header-create [onPreview]="onPreview"></app-header-create>
 
     <div class="field">
         <input
@@ -21,3 +22,5 @@
     </div>
 
 </form>
+
+<app-notes-view *ngIf="previewNote" [previewNote]="previewNote"></app-notes-view>
