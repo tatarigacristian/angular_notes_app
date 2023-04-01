@@ -1,1 +1,23 @@
-<p>notes-edit works!</p>
+<form class="form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <app-header-create></app-header-create>
+
+    <div class="field">
+        <input
+                type="text"
+                id="title"
+                [placeholder]="isInputError(registerForm.get('title'), 'required', isSubmitted) ? 'Title is required.' : 'Title'"
+                formControlName="title"
+                [class.invalid]="isInputInvalid(registerForm.get('title'), isSubmitted)"
+        />
+    </div>
+    <div class="field">
+        <textarea
+                [placeholder]="isInputError(registerForm.get('description'), 'required', isSubmitted) ? 'Description is required.' : 'Type something...'"
+                type="text"
+                id="description"
+                formControlName="description"
+                [class.invalid]="isInputInvalid(registerForm.get('title'), isSubmitted)"
+        ></textarea>
+    </div>
+
+</form>

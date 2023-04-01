@@ -1,0 +1,7 @@
+<div class="wrapper">
+    <app-button routerLink="/notes" [iconPath]="backPath"></app-button>
+
+    <div class="options">
+        <app-button routerLink="/notes/{{note?.id}}/edit" [iconPath]="editPath"></app-button>
+    </div>
+</div>

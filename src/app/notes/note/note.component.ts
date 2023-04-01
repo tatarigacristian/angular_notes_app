@@ -27,6 +27,14 @@ export class NoteComponent {
     this.router.navigate(['notes']).then(r => console.log(r));
   }
 
+  redirectToNote(){
+    this.router.navigate(['notes', this.note.id, 'view']).then(r => console.log(r));
+  }
+
+  onClick(){
+    this.redirectToNote();
+  }
+
   onHover(status: boolean){
     this.isDeleteMode = status;
   }

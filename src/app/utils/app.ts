@@ -51,9 +51,10 @@ export function getNotesFromLocalStorage(): Note[] {
     return notes.reverse();
 }
 
-export function findNoteById(id: string): Note | undefined {
+export function findNoteById(id: string): Note | null {
     const notes: Note[] = JSON.parse(localStorage.getItem('notes') || '[]');
-    return notes.find(note => note.id === id);
+    const note =  notes.find(note => note.id === id);
+    return note || null;
 }
 
 export function deleteNoteFromLocalStorage(note: Note): void {

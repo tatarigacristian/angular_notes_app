@@ -1,0 +1,20 @@
+.note{
+  #title p{
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 65px;
+    max-height: 360px;
+    color: #FFFFFF;
+  }
+  #description p{
+    padding-top: 30px;
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 31px;
+    resize: none;
+    height: calc(100vh - 250px);
+  }
+}

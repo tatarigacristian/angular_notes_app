@@ -1,0 +1,21 @@
+.searching{
+  display: block;
+  width: 100%;
+}
+.wrapper{
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 3.7rem;
+
+  h1{
+    font-family: 'Nunito', sans-serif;
+    font-style: normal;
+    font-size: 43px;
+    line-height: 59px;
+  }
+  .options{
+    display: flex;
+    align-items: center;
+    gap: 2.1rem;
+  }
+}

@@ -13,6 +13,7 @@ import {AppRoutingModule} from "./app-routing.module";
 import {NotesListComponent} from "./pages/notes-list/notes-list.component";
 import {NotesCreateComponent} from "./pages/notes-create/notes-create.component";
 import {NotesEditComponent} from "./pages/notes-edit/notes-edit.component";
+import { NotesViewComponent } from './pages/notes-view/notes-view.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import {NotesEditComponent} from "./pages/notes-edit/notes-edit.component";
       NotesListComponent,
       NotesEditComponent,
       NotesCreateComponent,
+      NotesViewComponent,
   ],
     imports: [
         BrowserModule,

@@ -9,6 +9,7 @@ import { HeaderCreateComponent } from './header/header-create/header-create.comp
 import {RouterLink} from "@angular/router";
 import {FormsModule} from "@angular/forms";
 import {NgIf} from "@angular/common";
+import { HeaderViewComponent } from './header/header-view/header-view.component';
 
 @NgModule({
     declarations: [
@@ -16,6 +17,7 @@ import {NgIf} from "@angular/common";
         SearchComponent,
         FiltersComponent,
         HeaderCreateComponent,
+        HeaderViewComponent,
     ],
     imports: [
         CommonModule,
@@ -29,7 +31,8 @@ import {NgIf} from "@angular/common";
         FiltersComponent,
         DialogExampleComponent,
         DialogOverviewComponent,
-        HeaderCreateComponent
+        HeaderCreateComponent,
+        HeaderViewComponent
     ]
 })
 export class HeaderModule {
