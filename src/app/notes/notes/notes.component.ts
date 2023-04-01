@@ -1,4 +1,4 @@
-import {Component, Input, SimpleChanges} from '@angular/core';
+import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {availableColors, notes} from "./notes.map";
 import {filterNotesByTitleOrDescription, getNotesFromLocalStorage, selectColors} from "../../utils/app";
 import {Note} from "./notes.model";
@@ -8,7 +8,7 @@ import {Note} from "./notes.model";
   templateUrl: './notes.component.html',
   styleUrls: ['./notes.component.scss']
 })
-export class NotesComponent {
+export class NotesComponent implements OnChanges{
   notes: Note[] = getNotesFromLocalStorage();
   colors: string[] = selectColors(this.notes.length, availableColors)
 
@@ -20,9 +20,9 @@ export class NotesComponent {
   }
 
   ngOnChanges(changes: SimpleChanges) {
+    console.log('here-child');
     const searchValue = changes['searchValue'].currentValue;
     this.notes = filterNotesByTitleOrDescription(this.notes, searchValue);
-
 
   }
 

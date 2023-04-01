@@ -14,6 +14,7 @@ import {NotesListComponent} from "./pages/notes-list/notes-list.component";
 import {NotesCreateComponent} from "./pages/notes-create/notes-create.component";
 import {NotesEditComponent} from "./pages/notes-edit/notes-edit.component";
 import { NotesViewComponent } from './pages/notes-view/notes-view.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { NotesViewComponent } from './pages/notes-view/notes-view.component';
         FormsModule,
         MatButtonModule,
         AppRoutingModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        HttpClientModule
     ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,10 @@
+<p (click)="change()">salut</p>
+
+<p>{{test}}</p>
 
 <div class="wrapper">
     <app-header (searchValueEmitter)="setSearchValue($event)"></app-header>
 </div>
 <app-notes [searchValue]="searchValue"></app-notes>
 <app-fixed-button [iconPath]="plusPath"></app-fixed-button>
+
